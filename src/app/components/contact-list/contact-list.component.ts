@@ -11,8 +11,9 @@ import { ContactService } from '../../services/contact.service';
 })
 export class ContactListComponent implements OnInit {
   contacts: ContactModel[] = [];
-  private contactService: ContactService = Inject(ContactService);
-  private router: Router = Inject(Router);
+
+  constructor(private contactService: ContactService, private router: Router) {}
+
 
   ngOnInit() {
     this.getContacts();
