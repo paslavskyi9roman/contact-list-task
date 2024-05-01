@@ -32,6 +32,12 @@ export class ContactService {
   return contacts.find(contact => contact.id === id);
 }
 
+  addContact(contact: ContactModel): void {
+    const contacts: ContactModel[] = this.getContacts();
+    contacts.push(contact);
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }
+
   deleteContact(id: string): void {
     let contacts: ContactModel[] = this.getContacts();
     contacts = contacts.filter(contact => contact.id !== id);

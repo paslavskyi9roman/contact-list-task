@@ -1,0 +1,22 @@
+<button class="back-button" (click)="goBack()">Go Back</button>
+<section class="add-contact">
+
+<form (ngSubmit)="addContact()">
+  <label for="name">Name:</label>
+  <input id="name" [(ngModel)]="newContact.name" name="name" required>
+
+  <label for="surname">Surname:</label>
+  <input id="surname" [(ngModel)]="newContact.surname" name="surname" required>
+
+  <label for="phone">Phone:</label>
+  <input id="phone" [(ngModel)]="newContact.phone" name="phone" required>
+
+  <label for="email">Email:</label>
+  <input id="email" [(ngModel)]="newContact.email" name="email" required>
+
+  <label for="address">Address:</label>
+  <input id="address" [(ngModel)]="newContact.address" name="address" required>
+
+  <button class="add-contact__button" type="submit">Add Contact</button>
+</form>
+</section>
