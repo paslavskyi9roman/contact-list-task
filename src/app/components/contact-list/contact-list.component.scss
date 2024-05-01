@@ -1,13 +1,7 @@
+@import '../../../styles/common.scss';
+
 .contact-list {
-  padding: 2rem;
-  margin: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.23);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  width: 320px;
+  @extend .card;
 
   &__item {
     cursor: pointer;
@@ -15,32 +9,10 @@
 }
 
 .search-bar {
-  padding: 1rem;
-  margin: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.23);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
-  width: 320px;
-
-  &:focus {
-    outline: none;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
-  }
+  @extend .input;
 }
 
 
 .add-button {
-  padding: 1rem;
-  margin: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.23);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  cursor: pointer;
+  @extend .button;
 }
