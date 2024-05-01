@@ -1,37 +1,39 @@
+@import './variables.scss';
+
 .card {
-  padding: 2rem;
-  margin: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.23);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 2 * $padding;
+  margin: $margin;
+  background: $background;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  backdrop-filter: $backdrop-filter;
+  -webkit-backdrop-filter: $backdrop-filter;
+  border: $border;
   width: 320px;
 }
 
 .button {
-  padding: 1rem;
-  margin: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.23);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: $padding;
+  margin: $margin;
+  background: $background;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  backdrop-filter: $backdrop-filter;
+  -webkit-backdrop-filter: $backdrop-filter;
+  border: $border;
   cursor: pointer;
 }
 
 .input {
-  padding: 1rem;
-  margin: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.23);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
+  padding: $padding;
+  margin: $margin;
+  background: $background;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  backdrop-filter: $backdrop-filter;
+  -webkit-backdrop-filter: $backdrop-filter;
+  border: $border;
+  transition: $transition;
 
   &:focus {
     outline: none;
