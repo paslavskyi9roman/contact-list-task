@@ -38,6 +38,13 @@ export class ContactService {
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }
 
+  updateContact(contact: ContactModel): void {
+  const contacts: ContactModel[] = this.getContacts();
+  const index = contacts.findIndex(contact => contact.id === contact.id);
+  contacts[index] = contact;
+  localStorage.setItem('contacts', JSON.stringify(contacts));
+}
+
   deleteContact(id: string): void {
     let contacts: ContactModel[] = this.getContacts();
     contacts = contacts.filter(contact => contact.id !== id);

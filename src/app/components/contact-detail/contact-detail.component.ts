@@ -30,6 +30,13 @@ export class ContactDetailComponent implements OnInit {
     this.router.navigate(['/contacts']);
   }
 
+
+  editContact(): void {
+    if (this.contact) {
+      this.router.navigate(['/contacts/edit', this.contact.id]);
+    }
+  }
+
   deleteContact(): void {
     if (this.contact) {
       this.contactService.deleteContact(this.contact.id);
