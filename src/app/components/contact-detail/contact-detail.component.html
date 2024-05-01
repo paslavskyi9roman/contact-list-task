@@ -1,4 +1,5 @@
-<div *ngIf="contact">
+<button class="back-button" (click)="goBack()">Go Back</button>
+<div class="contact-detail" *ngIf="contact">
   <h2>{{ contact.name }} {{ contact.surname }}</h2>
   <p>Email: {{ contact.email }}</p>
   <p>Phone: {{ contact.phone }}</p>
