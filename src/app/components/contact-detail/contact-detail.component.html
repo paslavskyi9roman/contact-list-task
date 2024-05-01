@@ -4,10 +4,12 @@
   <button class="delete-button" (click)="deleteContact()">Delete</button>
 </div>
 
-<div class="contact-detail" *ngIf="contact">
-  <h2>{{ contact.name }} {{ contact.surname }}</h2>
-  <p>Email: {{ contact.email }}</p>
-  <p>Phone: {{ contact.phone }}</p>
-  <p>Date of Birth: {{ contact.dateOfBirth | date }}</p>
-  <p>Address: {{ contact.address }}</p>
-</div>
+@if (contact) {
+  <div class="contact-detail">
+    <h2>{{ contact.name }} {{ contact.surname }}</h2>
+    <p>Email: {{ contact.email }}</p>
+    <p>Phone: {{ contact.phone }}</p>
+    <p>Date of Birth: {{ contact.dateOfBirth | date }}</p>
+    <p>Address: {{ contact.address }}</p>
+  </div>
+}
