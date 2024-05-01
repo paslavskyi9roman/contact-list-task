@@ -1,1 +1,6 @@
-<p>contact-detail works!</p>
+<div *ngIf="contact">
+  <h2>{{ contact.name }} {{ contact.surname }}</h2>
+  <p>Email: {{ contact.email }}</p>
+  <p>Phone: {{ contact.phone }}</p>
+  <p>Date of Birth: {{ contact.dateOfBirth | date }}</p>
+</div>

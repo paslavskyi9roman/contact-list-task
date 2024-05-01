@@ -23,7 +23,12 @@ export class ContactService {
     return contacts;
   }
 
-  populateInitialData() {
+  populateInitialData(): void {
     localStorage.setItem('contacts', JSON.stringify(contactMock));
   }
+
+  getContactById(id: string): ContactModel | undefined {
+  const contacts: ContactModel[] = this.getContacts();
+  return contacts.find(contact => contact.id === id);
+}
 }
