@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor="let contact of contacts">
+  <li *ngFor="let contact of contacts" (click)="showContactDetail(contact.id)">
     {{ contact.name }} {{ contact.surname }} - {{ contact.phone }}
   </li>
 </ul>
