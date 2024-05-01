@@ -1,4 +1,7 @@
-<input [(ngModel)]="searchTerm" (ngModelChange)="searchContacts()" placeholder="Search contacts" class="search-bar">
+<div>
+  <button routerLink="/contacts/add" class="add-button">Add Contact</button>
+  <input [(ngModel)]="searchTerm" (ngModelChange)="searchContacts()" placeholder="Search contacts" class="search-bar">
+</div>
 
 <section class="contact-list">
   <h3>Contact list:</h3>
@@ -9,4 +12,4 @@
   </ul>
 </section>
 
-<button routerLink="/contacts/add" class="add-button">Add Contact</button>
+
