@@ -1,22 +1,48 @@
 <button class="back-button" (click)="goBack()">Go Back</button>
+
 <section class="add-contact">
+  <form [formGroup]="contactForm" (ngSubmit)="addContact()">
+    <label for="name">Name:
+      <div class="error"
+           *ngIf="contactForm.get('name')?.invalid && (contactForm.get('name')?.dirty || contactForm.get('name')?.touched)">
+        <div *ngIf="contactForm.get('name')?.errors?.['required']">Name is required</div>
+      </div>
+    </label>
+    <input id="name" formControlName="name" required>
 
-<form (ngSubmit)="addContact()">
-  <label for="name">Name:</label>
-  <input id="name" [(ngModel)]="newContact.name" name="name" required>
+    <label for="surname">Surname:
+      <div class="error"
+           *ngIf="contactForm.get('surname')?.invalid && (contactForm.get('surname')?.dirty || contactForm.get('surname')?.touched)">
+        <div *ngIf="contactForm.get('surname')?.errors?.['required']">Surname is required</div>
+      </div>
+    </label>
+    <input id="surname" formControlName="surname" required>
 
-  <label for="surname">Surname:</label>
-  <input id="surname" [(ngModel)]="newContact.surname" name="surname" required>
+    <label for="phone">Phone:
+      <div class="error"
+           *ngIf="contactForm.get('phone')?.invalid && (contactForm.get('phone')?.dirty || contactForm.get('phone')?.touched)">
+        <div *ngIf="contactForm.get('phone')?.errors?.['required']">Phone is required</div>
+      </div>
+    </label>
+    <input id="phone" formControlName="phone" required>
 
-  <label for="phone">Phone:</label>
-  <input id="phone" [(ngModel)]="newContact.phone" name="phone" required>
+    <label for="email">Email:
+      <div class="error"
+           *ngIf="contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)">
+        <div *ngIf="contactForm.get('email')?.errors?.['required']">Email is required</div>
+        <div *ngIf="contactForm.get('email')?.errors?.['email']">Email is invalid</div>
+      </div>
+    </label>
+    <input id="email" formControlName="email" required>
 
-  <label for="email">Email:</label>
-  <input id="email" [(ngModel)]="newContact.email" name="email" required>
+    <label for="address">Address:
+      <div class="error"
+           *ngIf="contactForm.get('address')?.invalid && (contactForm.get('address')?.dirty || contactForm.get('address')?.touched)">
+        <div *ngIf="contactForm.get('address')?.errors?.['required']">Address is required</div>
+      </div>
+    </label>
+    <input id="address" formControlName="address" required>
 
-  <label for="address">Address:</label>
-  <input id="address" [(ngModel)]="newContact.address" name="address" required>
-
-  <button class="add-contact__button" type="submit">Add Contact</button>
-</form>
+    <button class="add-contact__button" type="submit" [disabled]="contactForm.invalid">Add Contact</button>
+  </form>
 </section>
