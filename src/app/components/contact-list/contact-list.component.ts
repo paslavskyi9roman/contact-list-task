@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ContactModel } from '../../models/contact.model';
@@ -11,19 +11,34 @@ import { ContactService } from '../../services/contact.service';
 })
 export class ContactListComponent implements OnInit {
   contacts: ContactModel[] = [];
+  filteredContacts: ContactModel[] = [];
+  searchTerm: string = '';
 
-  constructor(private contactService: ContactService, private router: Router) {}
+  constructor(private contactService: ContactService, private router: Router) {
+  }
 
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getContacts();
   }
 
-  getContacts() {
+  getContacts(): void {
     this.contacts = this.contactService.getContacts();
+    this.filteredContacts = this.contacts;
   }
 
-  showContactDetail(id: string) {
+  showContactDetail(id: string): void {
     this.router.navigate(['/contacts', id]);
   }
+
+  searchContacts(): void {
+    if (this.searchTerm) {
+      this.filteredContacts = this.contacts.filter(contact =>
+        (contact.name + ' ' + contact.surname).toLowerCase().includes(this.searchTerm.toLowerCase()),
+      );
+    } else {
+      this.filteredContacts = this.contacts;
+    }
+  }
+
 }
