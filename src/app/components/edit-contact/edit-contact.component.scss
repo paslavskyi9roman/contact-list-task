@@ -12,8 +12,23 @@
     flex-direction: column;
     gap: 1rem;
 
+    label {
+      position: relative;
+    }
+
     input {
       @extend .input;
     }
   }
+}
+
+.back-button {
+  @extend .button;
+}
+
+
+.error {
+  position: absolute;
+  color: red;
+  font-size: 0.8rem;
 }

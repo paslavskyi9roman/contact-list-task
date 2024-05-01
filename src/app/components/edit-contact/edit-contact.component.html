@@ -1,22 +1,42 @@
 <section class="edit-contact">
-@if (contact) {
-  <form (ngSubmit)="editContact()">
-    <label for="name">Name:</label>
-    <input id="name" [(ngModel)]="contact.name" name="name" required>
+  <form *ngIf="contactForm" [formGroup]="contactForm" (ngSubmit)="editContact()">
+    <label for="name">Name:
+      <div class="error"
+           *ngIf="contactForm.get('name')?.invalid && (contactForm.get('name')?.dirty || contactForm.get('name')?.touched)">
+        <div *ngIf="contactForm.get('name')?.errors?.['required']">Name is required</div>
+      </div>
+      <input id="name" formControlName="name" required>
+    </label>
+    <label for="surname">Surname:
+      <div class="error"
+           *ngIf="contactForm.get('surname')?.invalid && (contactForm.get('surname')?.dirty || contactForm.get('surname')?.touched)">
+        <div *ngIf="contactForm.get('surname')?.errors?.['required']">Surname is required</div>
+      </div>
+      <input id="surname" formControlName="surname" required>
+    </label>
+    <label for="phone">Phone:
+      <div class="error"
+           *ngIf="contactForm.get('phone')?.invalid && (contactForm.get('phone')?.dirty || contactForm.get('phone')?.touched)">
+        <div *ngIf="contactForm.get('phone')?.errors?.['required']">Phone is required</div>
+      </div>
+      <input id="phone" formControlName="phone" required>
+    </label>
+    <label for="email">Email:
+      <div class="error"
+           *ngIf="contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)">
+        <div *ngIf="contactForm.get('email')?.errors?.['required']">Email is required</div>
+        <div *ngIf="contactForm.get('email')?.errors?.['email']">Email is invalid</div>
+      </div>
+      <input id="email" formControlName="email" required>
+    </label>
 
-    <label for="surname">Surname:</label>
-    <input id="surname" [(ngModel)]="contact.surname" name="surname" required>
-
-    <label for="phone">Phone:</label>
-    <input id="phone" [(ngModel)]="contact.phone" name="phone" required>
-
-    <label for="email">Email:</label>
-    <input id="email" [(ngModel)]="contact.email" name="email" required>
-
-    <label for="address">Address:</label>
-    <input id="address" [(ngModel)]="contact.address" name="address" required>
-
-    <button class="edit-contact__button" type="submit">Save Changes</button>
+    <label for="address">Address:
+      <div class="error"
+           *ngIf="contactForm.get('address')?.invalid && (contactForm.get('address')?.dirty || contactForm.get('address')?.touched)">
+        <div *ngIf="contactForm.get('address')?.errors?.['required']">Address is required</div>
+      </div>
+      <input id="address" formControlName="address" required>
+    </label>
+    <button class="edit-contact__button" type="submit" [disabled]="contactForm.invalid">Save Changes</button>
   </form>
-}
 </section>
