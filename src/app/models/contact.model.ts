@@ -5,4 +5,5 @@ export interface ContactModel {
   phone: string;
   dateOfBirth: Date;
   email: string;
+  address: string;
 }
