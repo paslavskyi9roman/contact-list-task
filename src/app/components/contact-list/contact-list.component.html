@@ -6,7 +6,7 @@
 <section class="contact-list">
   <h3>Contact list:</h3>
   <ul>
-    @for (contact of contacts; track contact.id) {
+    @for (contact of filteredContacts; track contact.id) {
       <li  (click)="showContactDetail(contact.id)" class="contact-list__item">
         {{ contact.name }} {{ contact.surname }} - {{ contact.phone }}
       </li>
